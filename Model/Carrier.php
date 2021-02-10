@@ -340,7 +340,7 @@ class Carrier extends AbstractCarrier implements CarrierInterface
     public function getTrackingInfo($trackNumber)
     {
         $title = $this->getConfigData('title');
-        $url = 'https://novaposhta.ua/tracking/index/cargo_number/' . $trackNumber . '/no_redirect/1';
+		$url = 'https://novaposhta.ua/tracking/?cargo_number=' . $trackNumber . '&newtracking=1';
         return $this->trackResultFactory->create()->setCarrierTitle($title)->setTracking($trackNumber)->setUrl($url);
     }
 
